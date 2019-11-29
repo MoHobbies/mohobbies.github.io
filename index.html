@@ -256,7 +256,7 @@ function beforeUnLoad() {
 </tr>
 </table>
 <center>
-<div width="100%" align='right' style="background-color:orange;padding-bottom:2px;"><span><a href="" style="font-size: 13px;color:red;font-weight:bold;padding-left:20px;padding-right:20px;padding-bottom:50px;background-color:#2222cc;" onClick='openForm("registerForm")'>Register</a></span>&nbsp;&nbsp;&nbsp;<button style="background-color:orange;width:85px;border:1px solid #000000;color:#000;"><div onclick="openForm('loginForm')">Login</div></button>&nbsp;&nbsp;&nbsp;</div>
+<div width="100%" align='right' style="background-color:orange;padding-bottom:2px;"><span><a href="" style="font-size: 13px;color:red;font-weight:bold;padding-left:20px;padding-right:20px;padding-bottom:50px;background-color:#2222cc;" onClick='openForm("subscribeForm")'>Register</a></span>&nbsp;&nbsp;&nbsp;<button style="background-color:orange;width:85px;border:1px solid #000000;color:#000;"><div onclick="openForm('loginForm')">Login</div></button>&nbsp;&nbsp;&nbsp;</div>
 <div class="topEvents-1009dac3">
 <h1 class="locationSelector-1efcc601">Popular Events Near <span class="locationSelector-16138739">Los Angeles, CA</h1>
 <div class="topEvents-40dbb4d2"><a class="topEvents-391fd280" href=""><img class="topEvents-36f458be" src="" alt="" /></a></div>
@@ -367,8 +367,8 @@ function beforeUnLoad() {
 </td>
 </tr>
 </table>
-<div class="form-popup" id="myForm">
-  <form name="loginForm" id="loginForm" action="/j_security_check" method="post" class="form-container">
+<div class="form-popup" id="loginForm">
+  <form name="loginForm" action="/j_security_check" method="post" class="form-container">
     <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
@@ -381,8 +381,8 @@ function beforeUnLoad() {
     <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
   </form>
 </div>
-<div class="form-popup" id="registersForm">
-  <form name="registersForm" id="registersForm" action="http://mr4.biz/registers.go" method="post">
+<div class="form-popup" id="subscribeForm">
+  <form name="registersForm" action="http://mr4.biz/registers.go" method="post">
     <h1>Subscribe</h1>
 	<div><input id="registers" name="registers" type="hidden" value='1'/></div>
 	<label for="email"><b>Full Name</b></label>
@@ -403,7 +403,7 @@ function beforeUnLoad() {
 </div>
 <script>
 function openForm(form) {
-  document.getElementById(form).style.display = "block";console.log('form'+form);
+  document.getElementById(form).style.display = "block";//console.log('form'+form);
 }
 function closeForm(form) {
   document.getElementById(form).style.display = "none";
