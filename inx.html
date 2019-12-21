@@ -3,13 +3,13 @@
 <head>
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,wridiv:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
 <meta http-equiv="Content-Language" content="en" />
 <title>MoHobbies | Your Ticket to Sports, Concerts &amp; More</title>
 <meta name="robots" content="index, follow" />
 <link rel="shortcut icon" href="/favicon.png" />
 <link rel="apple-touch-icon" href="/images/mobile-app/iosIcon.png">
-<link rel="preload" href="/fonts/ProximaNova-Regular.5a18309afad2627a18d330d35965394d.woff2" as="font" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/ProximaNova-Regular.5a18309afad2627a18d330d35965394d.woff2" as="font" corigin="anonymous" />
 <link rel="preload" href="/fonts/ProximaNova-Medium.e1621c64c35065affd16b94f9a001209.woff2" as="font" crossorigin="anonymous" />
 <link rel="preload" href="/fonts/ProximaNova-Semibold.b6c6379af2c0f9ae8eff2a869327ab44.woff2" as="font" crossorigin="anonymous" />
 <link rel="preload" href="/fonts/ProximaNova-Bold.59aef9c2427a09b6d486df74f2dc48aa.woff2" as="font" crossorigin="anonymous" />
@@ -59,7 +59,6 @@ font-family:arial,helvetica,sans-serif;}
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
-
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button { 
   color: #ffffff;
@@ -72,7 +71,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   right: 25px;
   width: 70px;
 }
-
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
@@ -82,14 +80,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
-
 /* Add styles to the form container */
 .form-container {
   max-width: 300px;
   padding: 10px;
   background-color: white;
 }
-
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
@@ -98,13 +94,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border: none;
   background: #f1f1f1;
 }
-
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
-
 /* Set a style for the submit/login button */
 .form-container .btn {
   background-color: #4CAF50;
@@ -116,12 +110,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   margin-bottom:10px;
   opacity: 0.8;
 }
-
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
 }
-
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
@@ -133,176 +125,146 @@ var timeID = null;
 function sessionOut() {   
    window.top.location.href = "/all/logout.jsp"   
 }
-
 function resetTimer() {   
    if (timeID != null)
       clearTimeout(timeID);
    timeID = setTimeout("sessionOut()", 1700000);   
 }
-
 //in milliseconds
 timeID = setTimeout('sessionOut();', 1700000);
-
-
 function beforeUnLoad() {
   top.location.href = "/all/close.jsp"
 }
-
 //-->
 </script>
 </head>
 
 <body style="margin: 0pt" leftmargin="0" rightmargin="0" topmargin="0" marginheight="0" marginwidth="0" class="layout-new home layout-transparent-header">
-<table cellspacing="0" cellpadding="0" border="0" width='100%' style="background:linear-gradient(blue, blue);">
+<div cellspacing="0" cellpadding="0" border="0" width='100%' style="background:linear-gradient(blue, blue);display:block;float:left;overflow-x:auto;">
 <tr>
 <td rowspan=2><!--img src="images/smallelove.jpg" width=0 alt="LOGO"--><span style="padding-left:50px;width:50%;font-weight:bold;font-size:39;color:red;font-family:Comic Sans MS;Cursive;Lobster;sans-serif;">MoHobbies</span></td>
 
-<td width=83 height=18 align=left>
-<table cellspacing=20 cellpadding=20 border=0 width=83>
+<td width=83 height=18 align=left style="display:block;float:left;overflow-x:auto;">
+<div cellspacing=20 cellpadding=20 border=0 width=83>
 <tr>
 
 <td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/search.do" target="ContentFrame">SEARCH</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/search.do" target="ContentFrame">SEARCH</a></td></tr>
 
 <tr><td valign=top height=1 align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</table>
+</div>
 <td width=2 height=10 valign=middle><img src="images/deepred_separator.gif" width=1 height=10></td>
-</table>
+</div>
 </td>
 
 <td width=2><img src="images/deepred_separator.gif" width=1 height=10></td>
 <td width=85 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=85>
+<div cellspacing=0 cellpadding=0 border=0 width=85>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
 <td align=center valign=middle width=100 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=100 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/viewevent.do" target="ContentFrame">CONNECTIONS</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=100 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/viewevent.do" target="ContentFrame">CONNECTIONS</a></td></tr>
 <tr><td valign=top height=1 width=95 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</table>
+</div>
 <td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</table>
+</div>
 </td> 
 <td width=2/>
 <td width=85 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=85>
+<div cellspacing=0 cellpadding=0 border=0 width=85>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
 <td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="" target="ContentFrame">EMAILS</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="" target="ContentFrame">EMAILS</a></td></tr>
 <tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</table>
+</div>
 <td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</table>
+</div>
 </td>   
 
 <td width=2><img src="" width=1 height=15></td>
 <td width=85 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=85>
+<div cellspacing=0 cellpadding=0 border=0 width=85>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
 <td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/allSearch.do?method=getBlogs" target="ContentFrame">BLOGS</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/allSearch.do?method=getBlogs" target="ContentFrame">BLOGS</a></td></tr>
 <tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</table>
+</div>
 <td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</table>
+</div>
 </td>  
 
 <td width=2><img src="" width=1 height=15></td>
 
 <td width=85 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=85>
+<div cellspacing=0 cellpadding=0 border=0 width=85>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
 <td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="" target="ContentFrame">GROUPS</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="" target="ContentFrame">GROUPS</a></td></tr>
 <tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</table>
+</div>
 <td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</table>
+</div>
 </td>  
 
 <td width=2><img src="" width=1 height=15></td>
 <td width=85 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=85>
+<div cellspacing=0 cellpadding=0 border=0 width=85>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
 <td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=110 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">MOBILE CHAT</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=110 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">MOBILE CHAT</a></td></tr>
 <tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=110></td></tr>
-</table>
+</div>
 <td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</table>
+</div>
 </td>  
 
 <td width=2><img src="" width=1 height=15></td>
 
 <td width=84 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=84>
+<div cellspacing=0 cellpadding=0 border=0 width=84>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=5></td>
 <td align=center valign=middle width=65 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=130 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">MOBILE VIDEO</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=130 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">MOBILE VIDEO</a></td></tr>
 <tr><td valign=top height=1 align=center ><img src="images/redbottom.jpg" height="1" width=130></td></tr>
-</table>
+</div>
 <td valign=left align=left bgcolor="#2222cc" height=18 width=5 rowspan=2></td>
-</table>
+</div>
 </td>
 <td width=2><img src="" width=1 height=15></td>
 <td width=84 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=84>
+<div cellspacing=0 cellpadding=0 border=0 width=84>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=5></td>
 <td align=center valign=middle width=65 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/texting.do" target="ContentFrame">TEXTING</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/texting.do" target="ContentFrame">TEXTING</a></td></tr>
 <tr><td valign=top height=1 align=center ><img src="images/redbottom.jpg" height="1" width=100></td></tr>
-</table>
+</div>
 <td valign=left align=left bgcolor="#2222cc" height=18 width=5 rowspan=2></td>
-</table>
+</div>
 </td>
 <td valign=left align=left width=2 rowspan=2></td>
 <td width=84 height=18>
-<table cellspacing=0 cellpadding=0 border=0 width=84>
+<div cellspacing=0 cellpadding=0 border=0 width=84>
 <tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=5></td>
 <td align=center valign=middle width=65 height=18 bgcolor="#2222cc">
-<table cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">EVENTS</a></td></tr>
+<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">EVENTS</a></td></tr>
 <tr><td valign=top height=1 align=center><img src="images/redbottom.jpg" height="1" width=100></td></tr>
-</table>
+</div>
 <td valign=left align=left bgcolor="#2222cc" height=18 width=5 rowspan=2></td>
-</table>
+</div>
 </td>
 </tr>
 <tr>
 </tr>
-</table>
+</div>
 <center>
-<div width="100%" align='right' style="background-color:orange;padding-bottom:2px;"><span><a href="/register.do" style="font-size: 13px;color:red;font-weight:bold;padding-left:20px;padding-right:20px;padding-bottom:50px;background-color:#2222cc;">Register</a></span>&nbsp;&nbsp;&nbsp;<button style="background-color:#2222cc;width:85px;border:1px solid gray;color:red;"><div onclick="openForm()">Login</div></button>&nbsp;&nbsp;&nbsp;</div>
+<div width="100%" align='right' style="background-color:orange;padding-bottom:2px;"><a href="#" style="font-size: 13px;color:red;font-weight:bold;padding-left:20px;padding-right:20px;padding-bottom:50px;background-color:#2222cc;" onClick='openForm("subscribeForm");return false;'>Register</a></span>&nbsp;&nbsp;&nbsp;<button style="background-color:orange;width:85px;border:1px solid #000000;font-weight:bold;color:#000;"><div onclick="openForm('loginForm')">Login</div></button>&nbsp;&nbsp;&nbsp;</div>
 <div class="topEvents-1009dac3">
 <h1 class="locationSelector-1efcc601">Popular Events Near <span class="locationSelector-16138739">Los Angeles, CA</h1>
-<div class="topEvents-40dbb4d2"><a class="topEvents-391fd280" href="https://www.bandsintown.com/c/los-angeles-ca?came_from=253&amp;sort_by_filter=Number+of+RSVPs"><img class="topEvents-36f458be" src="https://assets.bandsintown.com/images/tealChevronRight.svg" alt="" /></a></div>
+<div class="topEvents-40dbb4d2"><a class="topEvents-391fd280" href=""><img class="topEvents-36f458be" src="" alt="" /></a></div>
 </div>
-<table style="padding-left:50px;" cellspacing='50'><tr>
+<div style="padding-left:50px;" cellspacing='50'><tr>
 <td class="topEvents-47bdd8a4">
 <div class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><img src="https://photos.bandsintown.com/thumb/8914607.jpeg" alt="Iron Maiden" /></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">SAT</div>
-<div class="event-7b7e02d5">14</div>
-<div class="event-aa84ecb2">SEP</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://www.bandsintown.com/en/a/1301-iron-maiden?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=top_event">Iron Maiden</a></h2>
-<div class="event-0d021c26">Banc of California Stadium</div>
-</td>
-<td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><img src="https://photos.bandsintown.com/thumb/9104354.jpeg" alt="Jonas Brothers" /></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">SUN</div>
-<div class="event-7b7e02d5">06</div>
-<div class="event-aa84ecb2">OCT</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://www.bandsintown.com/en/a/667-jonas-brothers?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=top_event">Jonas Brothers</a></h2>
-<div class="event-0d021c26">Honda Center</div>
-</td>
-<td class="topEvents-8fe4c237" style="display:block;">
-
-<div class="LazyLoad is-visible"><img src="https://photos.bandsintown.com/thumb/8669790.jpeg" alt="Ariana Grande" /></div>
+<div class="LazyLoad is-visible"><a href="http://bit.ly/2PgsLJV"><img src="infected-mushroom-live-dj-set-.jpg" alt="" width="300" /></a></div>
 </div>
 <div class="event-ddd28673">
 <div class="event-1ac55de3">SAT</div>
@@ -310,64 +272,78 @@ function beforeUnLoad() {
 <div class="event-aa84ecb2">DEC</div>
 </div>
 <div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://www.bandsintown.com/en/a/1120421-ariana-grande?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=top_event">Ariana Grande</a></h2>
-<div class="event-0d021c26">The Forum</div>
+<h2 class="event-ded13d73"><a href="http://bit.ly/2PgsLJV"></a></h2>
+	<div class="event-0d021c26"><a href="https://www.tixr.com/pr/NAWANG/15853">Downtown LA</a></div>
+</td>
+<td class="topEvents-8fe4c237">
+<div class="LazyLoad is-visible"><img src="party-favor.png" alt="" width="300"/></div>
+</div>
+<div class="event-ddd28673">
+<div class="event-1ac55de3">SAT</div>
+<div class="event-7b7e02d5">11</div>
+<div class="event-aa84ecb2">Jan</div>
+</div>
+<div class="event-db06d0e3">
+<h2 class="event-ded13d73"><a href="http://bit.ly/2PgsLJV">Two Dates</a></h2>
+<div class="event-0d021c26">Downtown LA Location</div>
+</td>
+<td class="topEvents-8fe4c237" style="display:block;">
+
+<div class="LazyLoad is-visible"><a href="http://bit.ly/2PgsLJV"><img src="jason-ross.jpg" alt="" width="300"/></a></div>
+</div>
+<div class="event-ddd28673">
+<div class="event-1ac55de3">SAT</div>
+<div class="event-7b7e02d5">29</div>
+<div class="event-aa84ecb2">FEB</div>
+</div>
+<div class="event-db06d0e3">
+<h2 class="event-ded13d73"><a href=""></a></h2>
+<div class="event-0d021c26">Hollywood</div>
 </td></tr>
 
 <tr>
 <td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><img src="https://photos.bandsintown.com/thumb/6039209.jpeg" alt="Slayer" /></div>
+<div class="LazyLoad is-visible"><a href="https://vor.us/a42d7"><img src="Benzi.png" alt="" width="300"/></a></div>
+</div>
+<div class="event-ddd28673">
+<div class="event-1ac55de3">Friday</div>
+<div class="event-7b7e02d5">20</div>
+<div class="event-aa84ecb2">DEC</div>
+</div>
+<div class="event-db06d0e3">
+<h2 class="event-ded13d73"><a href="http://bit.ly/2PgsLJV"></a></h2>
+  <div class="event-0d021c26"><a href="https://www.tixr.com/pr/NAWANG/15851">Hollywood Location</a></div>
+</td>
+<td class="topEvents-8fe4c237">
+<div class="LazyLoad is-visible"><a href="https://vor.us/a42d7"><img src="markus.jpg" alt="" width="300"/></a></div>
+</div>
+<div class="event-ddd28673">
+<div class="event-1ac55de3">TUES</div>
+<div class="event-7b7e02d5">31</div>
+<div class="event-aa84ecb2">DEC</div>
+</div>
+<div class="event-db06d0e3">
+<h2 class="event-ded13d73"><a href="https://vor.us/a42d7">Hollywood</a></h2>
+</div>
+</td>
+<td class="topEvents-8fe4c237">
+<div class="LazyLoad is-visible"><a href="https://vor.us/a42d7"><img src="hernan.png" alt="" width="300"/></a></div>
 </div>
 <div class="event-ddd28673">
 <div class="event-1ac55de3">SAT</div>
-<div class="event-7b7e02d5">30</div>
-<div class="event-aa84ecb2">NOV</div>
+<div class="event-7b7e02d5">21</div>
+<div class="event-aa84ecb2">DEC</div>
 </div>
 <div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://www.bandsintown.com/en/a/386-slayer?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=top_event">Slayer</a></h2>
-<div class="event-0d021c26">The Forum</div>
-</td>
-<td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><img src="https://photos.bandsintown.com/thumb/9005151.jpeg" alt="Cage the Elephant" /></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">WED</div>
-<div class="event-7b7e02d5">17</div>
-<div class="event-aa84ecb2">JUL</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://www.bandsintown.com/en/a/12755-cage-the-elephant?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=top_event">Cag</a></h2>
+<h2 class="event-ded13d73"><a href="https://vor.us/a42d7">Hollywood</a></h2>
 </div>
 </td>
-<td><a data-bindattr-167="167" data-bindattr-168="168" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3CQRKCIBQA0Jtwgy98QdGW5lgztW7hDhCTQmmUZLx9vXlTjJ_tRGlKKYvOvG2c1Rbtmpkw01mtB7xAe_e0sKgNpuD9kUIYwCjvxrAuTgGrASXkDGtqd7tEyhrGirIVzVm2eYcduVV7X6PEon8QHAsxlJWGSg4ChMIaNHINxjA-ohGVlJzs-wVdLwy_3v9JXL_2B1n0cA6pAAAADtCO1PNZn1pCvav3SpMoaAg5rnO4IU5lJRXTWQvv2BMB"
-            title="Mary J. Blige & Nas"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381189954-1563381189954.png" class="fr-fic fr-dib"><h4>Mary J. Blige &amp; Nas</h4><div content="2019-09-17" itemprop="StartDate">Sep 17, 2019</div>Hollywood Bowl</a></td>
-
 </tr>
-
-<tr>
-    <td><a data-bindattr-140="140" data-bindattr-141="141" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3MYQ6CIBQA4Jt4gxe8JIH-pmurrQP4DxGTKdD0Cev29R3gm4k--5WxUsqJvF0cBbOT2042BUbFRfpCig4-fk20A80OBhNHTwkoHRuYaGbnA1iz-ilt0RtABH6GM0fNXP4HjGvOL02nVdcKVC1WT5V7jfJYiqxwuoixUQMoOQoQBjUMWA9gLa8ntEJJWVc535H3Ijxu7_xKFW2H-wFfSugtuQAAANlG0KMZr7X-93IIXPvW90h59We-ezzLgWcGTolVTcmPAQ=="
-            title="Twenty One Pilots - The Bandito Tour"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381187050-1563381187050.png" class="fr-fic fr-dib"><h4>Twenty One Pilots - The Bandito Tour</h4><div content="2019-11-02" itemprop="StartDate">Nov 2, 2019</div>Honda Center</a></td>
-    <td><a data-bindattr-143="143" data-bindattr-144="144" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAAXBzRKCIBAA4DfxDTZYxR86Njkdujgdu60EoyVQuOL49n3fxPxdz0Ls-37i2Xwse1rZppOJXnzjyuBpicFC2gLtdADHLQEFmuzswdAyu5jCTIAI2EApUQubbWAhtZR101_6utSqr6_FvctPje39PbgCXa1eTTdC174UKEINI1YjGCMrh0Z1bVsVOd9QPpV_DOiOX8Fps38fA8oCrwAAAFmOm6ASn529xG1hSCwBv3vd229KtikdoUHa8o1akU4KAQ=="
-            title="Post Malone - Runaway Tour"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381189651-1563381189651.png" class="fr-fic fr-dib"><h4>Post Malone - Runaway Tour</h4><div content="2019-11-16" itemprop="StartDate">Nov 16, 2019</div>Honda Center</a></td>
-    <td><a data-bindattr-146="146" data-bindattr-147="147" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3IMQ6DIBQA0Jtwgy98QYWOtcahQ7cOLg0iKqmiUQrp7ds3vjmE_bxQmlLKgjNvG1Z9BntkZlvpueivPSDMFkbn9QJGr7t2kwfnp8WmbRv-tbhxO7zTgAi5gpyhojZaHyhTjBVlIzGvr6KpObnL2CmssH0xgmMhhlL2IKtBgNCooEfegzGMj2iErCpOYmyRdWJ98PS8DSQcH_sDFCklLLIAAAB4DLS1Z5vjVr-Ee95Em4rZ241WsnUm2-_6fTy8GVsnGwE="
-            title="Slayer - The Final Campaign"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381196427-1563381196427.png" class="fr-fic fr-dib"><h4>Slayer - The Final Campaign</h4><div content="2019-11-29" itemprop="StartDate">Nov 29, 2019</div>The Forum</a></td></tr>
-    <tr><td><a data-bindattr-149="149" data-bindattr-150="150" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3CQQ7CIBAAwJ_0BytQsIA3jdGDSROvvVHYVmILhq7l-zqZF9FnOzFWaz1Q9G-k1W2E5eDzylyJLjmYi0sBYauIhAkL1FyWAJS_BWKaF6w5B_BuiVMuKToQLbT_XFiGOyZi3HJ-7K62lRdl-Fk2D7MPVuj2mXUjpqMKnRnB6KBAOWFhFHIE77mchFdGa9ns-13wQXne-xv2DZUv_gAnYukPuwAAANn1pEuepvLsMQ82JEhWGxxodHIxBmtkN1Lrf4iKH51QAQ=="
-            title="Ariana Grande: Sweetener World Tour"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381187418-1563381187418.png" class="fr-fic fr-dib"><h4>Ariana Grande: Sweetener World Tour</h4><div content="2019-12-22" itemprop="StartDate">Dec 22, 2019</div>The Forum</a></td>
-    <td><a data-bindattr-155="155" data-bindattr-156="156" href="https://recos.ticketmaster.com/H4sIAAAAAAAAABXCwQ6CIBgA4DfxDX7hVxTs5lp1aOvYwRsgFhPBIcF6-9a3753SfpwIKaXUyerVpE0eycRah40oZ_2KogFnHRT59QasfzlTQphBS2eXEL2VQMV_Q3EgJhufCB0o7fqxwct47kfOqrvI04Ac98dS4dKxuRcKBJ8ZMIkDKGwVaE3bBTUTnLdVzjekE_PX6Nb0rFL8mB-3Sso_qwAAANh4vqNBrmU0GWY4bLXeALdSgcfEJ8GF6EIegPpQVoqCAQ=="
-            title="blink-182 & Lil Wayne"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381189783-1563381189783.png" class="fr-fic fr-dib"><h4>blink-182 &amp; Lil Wayne</h4><div content="2019-08-08" itemprop="StartDate">Aug 8, 2019</div>The Forum</a></td>
-    <td><a data-bindattr-152="152" data-bindattr-153="153" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3JwW7DIAwA0D_JH7jYCwlkt1bqpmrXnnpzqFFQm7CBR7S_X9_1Larf9d2Yfd8PmsJDdOWqUg4hr0YXgQF1Ad621KRULn-QI_AqJQWGPb0u5KoMq1SGwM8Uc9kSA3oggjekyUiTTQ2eEIfRTzge0X6cXffl220iR_kndhQHex_9DN7dLVimCWbqZwgB-0jBeuf6rrVPSjd7wcfFXc-dll_5B2yaJfS-AAAA3L5boAiPpzZ3CZ0ZiILx7rT_8d1n8VyAarm4jTTlt1oB"
-            title="The 50th Anniversary of America with Guests Poco,etc."><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381188211-1563381188211.png" class="fr-fic fr-dib"><h4>The 50th Anniversary of America with Guests Poco and Firefall</h4><div content="2019-08-11" itemprop="StartDate">Aug 11, 2019</div>The Pacific Amphitheatre</a></td>
-    <tr><td><a data-bindattr-158="158" data-bindattr-159="159" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAB3MMQ6DIBQA0Jt4gy-gCNjRpO3QoWMTlwYRlFTBwK9ev6b7y5sRt3wh5DiOEr35WFx1RptKE1eCs4UUl8WHCTLGYDNUlLUQIji_nAo2nfVogwajF-9iCl4DVVBVf0jsbgMS2lHaNELI5ibotVXFQ-19yyRT3BXMNXwUagAlRw5cn_3A6gGMobVjhisp62Lf78z3fHtPr2c3FJi-9geKyxtOuQAAABkvAIFNTmsAd7QNd779BMrt9p6TbL-nm2xXV5gTDVJ4AQ==?_ga=2.62344233.426020772.1563321820-1493652079.1562696881"
-            title="The Rolling Stones: 2019 No Filter Tour"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381189879-1563381189879.png" class="fr-fic fr-dib"><h4>The Rolling Stones: 2019 No Filter Tour</h4><div content="2019-08-22" itemprop="StartDate">Aug 22, 2019</div>Rose Bowl</a></td>
-    <td><a data-bindattr-161="161" data-bindattr-162="162" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3HMRLCIBAAwJ_wAwInJIAdcWIKKxuLdHCQCaOCkyDv1-12q_VznBnDkjHu9eheqcXsaiq5w_Jm8b_KuOG8H7S8XEHJUVhy020xoOZpWgmsvQyD9lSrIKl0YKgH4SkiFyug1EoJ0hpYt9i7mp_hZB9pJHX_xh9HVLe5fgAAAMsqCo8NfeEWcQfPrwWK4Iy-4-TPtaD6Orrcsodb0uNGAQ=="
-            title="Wiz Khalifa: The Decent Exposure Tour"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381196190-1563381196190.png" class="fr-fic fr-dib"><h4>Wiz Khalifa: The Decent Exposure Tour</h4><div content="2019-08-09" itemprop="StartDate">Aug 9, 2019</div>FivePoint Amphitheatre</a></td>
-    <td><a data-bindattr-164="164" data-bindattr-165="165" href="https://recos.ticketmaster.com/H4sIAAAAAAAAAA3HSw7CIBAA0JtwAwojUz4uNdUFFzDdFQppUwXTjsTj69u9heh9nIWItcS009E915bKRGstXawvkf4jIZ2UvT4NTiGAvg3M2zY6MFdvM4Pc46xt4NbMyHECxwOowGOUKkNEa4xirYGRI37v28XbujwY7Z_0A9fvwvx9AAAAIyPClo-vsa3wphNOpuppcZzQgTRl9opGZlqV1uBLO7gB"
-            title="Florida Georgia Line: Can't Say I Ain't Country Tour 2019"><img src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563381196334-1563381196333.png" class="fr-fic fr-dib"><h4>Florida Georgia Line: Can&#39;t Say I Ain&#39;t Country Tour 2019</h4><div content="2019-09-21" itemprop="StartDate">Sep 21, 2019</div>Glen Helen Amphitheater formerly San Manuel Amphitheater</a></td>
-</tr></table>
+</div>
 </center>
-<table border=0 cellpadding=0 cellspacing=0 bgcolor="#ff7000" width="100%" height=10>
-<tr><td width="800">
-<table width='100%' align='center' style="font-size:12px;"><tr><td>
+<div border=0 cellpadding=0 cellspacing=0 bgcolor="#ff7000" width="100%" height=10>
+<tr><td width="100%">
+<div width='100%' align='center' style="font-size:12px;"><tr><td>
 <td width=50><a href="https://www.facebook.com/Mohobbies/"><img src="/image/facebook.png" height=20></a></td>
 <td width=80><a href="https://www.twitter.com/Mohobbies/"><img src="/image/twitter.png" width=20></a></td>
 <td width=80><a href="/aboutus.do" id="rfooter">About Us</a>
@@ -387,12 +363,12 @@ function beforeUnLoad() {
 </td>
 <td style="width:30%;" align="right">copyright © MoHobbies.com&nbsp;&nbsp;</td>
 </tr>
-</table>
+</div>
 </td>
 </tr>
-</table>
-<div class="form-popup" id="myForm">
-  <form action="/j_security_check" method="post" class="form-container">
+</div>
+<div class="form-popup" id="loginForm">
+  <form name="loginForm" action="/j_security_check" method="post" class="form-container">
     <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
@@ -402,17 +378,36 @@ function beforeUnLoad() {
     <input type="password" placeholder="Enter Password" name="j_password" id="j_password" required>
 
     <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
   </form>
 </div>
+<div class="form-popup" id="subscribeForm" style="background-color:orange;margin:10px;">
+  <form name="registersForm" action="http://mr4.biz/registers.go" method="post">
+    <h1>Subscribe</h1>
+	<div><input id="registers" name="registers" type="hidden" value='1'/></div>
+	<label for="email"><b>Full Name</b></label>
+    <input type="text" placeholder="First Name" name="firstname" id="firstname" required>
+    <input type="text" placeholder="Last Name" name="lastname" id="lastname" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
+    <label for="cellphone"><b>Cellphone Number</b></label>
+    <input type="text" placeholder="Enter Cellphone Number" name="phonenum" id="phonenum" required>
+	
+    <label for="psw"><b>Pin(5 digits)</b></label>
+    <input type="password" placeholder="Enter Password" name="passcode" id="password" type="password" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm('subscribeForm')">Close</button>
+  </form>
+	<div>&nbsp;</div>
+</div>
 <script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+function openForm(form) {
+  document.getElementById(form).style.display = "block";//console.log('form'+form);
 }
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function closeForm(form) {
+  document.getElementById(form).style.display = "none";
 }
 </script>
 </body>
