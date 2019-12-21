@@ -250,7 +250,41 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <!-- End page content -->
 </div>
+<div class="form-popup" id="loginForm">
+  <form name="loginForm" action="/j_security_check" method="post" class="form-container">
+    <h1>Login</h1>
 
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="j_username" id="j_username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="j_password" id="j_password" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
+  </form>
+</div>
+<div class="form-popup" id="subscribeForm" style="background-color:orange;margin:10px;">
+  <form name="registersForm" action="http://mr4.biz/registers.go" method="post">
+    <h1>Subscribe</h1>
+	<div><input id="registers" name="registers" type="hidden" value='1'/></div>
+	<label for="email"><b>Full Name</b></label>
+    <input type="text" placeholder="First Name" name="firstname" id="firstname" required>
+    <input type="text" placeholder="Last Name" name="lastname" id="lastname" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="cellphone"><b>Cellphone Number</b></label>
+    <input type="text" placeholder="Enter Cellphone Number" name="phonenum" id="phonenum" required>
+	
+    <label for="psw"><b>Pin(5 digits)</b></label>
+    <input type="password" placeholder="Enter Password" name="passcode" id="password" type="password" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm('subscribeForm')">Close</button>
+  </form>
+	<div>&nbsp;</div>
+</div>
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -262,6 +296,14 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
+
+	function openForm(form) {
+  document.getElementById(form).style.display = "block";//console.log('form'+form);
+}
+function closeForm(form) {
+  document.getElementById(form).style.display = "none";
+}
+	
 </script>
 
 </body>
