@@ -85,7 +85,7 @@ function beforeUnLoad() {
   <header id="portfolio">
     <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-	  <div class="w3-container"><div style="float:right;padding-right:10px;"><a href="" onClick="openForm('loginForm');return flase;">LOGIN</a></div>
+	  <div class="w3-container"><div style="float:right;padding-right:10px;"><a href="#" onClick="openForm('loginForm');return flase;">LOGIN</a></div>
 		  <h1><b>Similar Hobbies</b></h1>	<div style="float:right;padding-top:32px;padding-right:10px;"><a href="#" onclick="openForm('subscribeForm');return false;">REGISTER</a></div>
     <div class="w3-section w3-bottombar w3-padding-16"  style="background-color:orange;">
       <span class="w3-margin-right">&nbsp;&nbsp;Filter:</span> 
@@ -302,7 +302,7 @@ function beforeUnLoad() {
           <span class="w3-small">Become a social publisher</span><br>
           <span></span>
         </li>
-        <li class="w3-padding-16">
+        <li class="w3-padding-16">&nbsp;&nbsp;
           <a href="http://twitter.com/mohobbies"><img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:30px;"></a>
           <span class="w3-small">Post to your audience</span><br>
           <span></span>
@@ -318,7 +318,7 @@ function beforeUnLoad() {
 <!-- End page content -->
 </div>
 <div class="form-popup" id="loginForm">
-  <form name="loginForm" action="/j_security_check" method="post" class="form-container">
+  <form name="signinForm" action="/j_security_check" method="post" class="form-container">
     <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
