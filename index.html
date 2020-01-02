@@ -2,7 +2,7 @@
 <html>
 <title>MOHOBBIES</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--meta name="viewport" content="width=device-width, initial-scale=1"-->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -64,15 +64,18 @@ img{ width: 100%; height: auto;}*/
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-	
+* {
+  box-sizing: border-box;
+}	
 @media screen and (max-width: 480px) {
   .column {
+    float:left;
     width: 100%;
   }
 }
 .column {
-  float: left;
-  width: 100%;
+  float: block;
+  width: 33%;
   padding: 10px;
   height: auto; /* Should be removed. Only for demonstration */
 }
@@ -124,22 +127,22 @@ function beforeUnLoad() {
   </header>
   
   <!-- First Photo Grid-->
-  <div class="w3-row-padding" style="background-color:blue;height:30;">
-    <div class="row w3-third w3-container w3-margin-bottom">
+  <div class="w3-row-padding" style="background-color:blue;height:30;width:100%;">
+    <div class="w3-third w3-container w3-margin-bottom">
       <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
       <div class="column">
         <p><b>Morten</b></p>
         <p><a href="https://www.tixr.com/pr/NAWANG/17147"><img src="morten.jpg" alt=""/></a></p>
       </div>
     </div>
-    <div class="row w3-third w3-container w3-margin-bottom">
+    <div class="row w3-third w3-container w3-margin-bottom row">
       <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
       <div class="column">
         <p><b>Jason Ross</b></p>
         <p><a href="http://bit.ly/2PgsLJV"><img src="jason-ross.jpg" alt=""/></a></p>
       </div>
     </div>
-    <div class="row w3-third w3-container">
+    <div class="row w3-third w3-container row">
       <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
       <div class="column">
         <p><b>Alex</b></p>
