@@ -1,0 +1,437 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@MoHobbies
+
+1
+0
+
+    0
+
+MoHobbies/mohobbies.github.io
+Code
+Issues 0
+Pull requests 0
+Actions
+Projects 0
+Wiki
+Security
+Insights
+Settings
+mohobbies.github.io/index.html
+@MoHobbies MoHobbies Update index.html 93e01c6 23 hours ago
+409 lines (382 sloc) 15.3 KB
+<!DOCTYPE html>
+<html>
+<title>MOHOBBIES</title>
+<meta charset="UTF-8">
+<!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6{font-family: "Raleway", sans-serif}
+/*@media screen and (max-device-width: 450px) {
+		#container { width: 100%; margin: 0; padding: 25px 0;}
+		div { display: block; width:auto;}
+		td  { display: block; padding: 5px 0; border: none; }
+		div img { display: block; margin: 0; width: auto;}
+}
+img{ width: 100%; height: auto;}*/
+</style>
+<style>
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+/* {
+  box-sizing: border-box;
+}*/	
+@media screen and (max-width: 480px) {
+  .column {
+    float:left;
+    width: 100%;
+  }
+}
+.column {
+  float: block;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<script language="javascript">
+<!--
+var timeID = null;
+function sessionOut() {   
+   window.top.location.href = "/all/logout.jsp"   
+}
+function resetTimer() {   
+   if (timeID != null)
+      clearTimeout(timeID);
+   timeID = setTimeout("sessionOut()", 1700000);   
+}
+//in milliseconds
+timeID = setTimeout('sessionOut();', 1700000);
+function beforeUnLoad() {
+  top.location.href = "/all/close.jsp"
+}
+//-->
+</script>		
+<body class="w3-light-grey w3-content" style="max-width:1600px;overflow-x:auto;">
+
+<!-- !PAGE CONTENT! -->
+<div id="container" class="w3-main">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+	  <div class="w3-container"><div style="float:right;padding-right:10px;"><a href="#" onClick="openForm('loginForm');return flase;">LOGIN</a></div>
+		  <h1><b>Similar Hobbies</b></h1>	<div style="float:right;padding-top:32px;padding-right:10px;"><a href="#" onclick="openForm('subscribeForm');return false;">REGISTER</a></div>
+    <div class="w3-section w3-bottombar w3-padding-16"  style="background-color:orange;">
+      <span class="w3-margin-right">&nbsp;&nbsp;Filter:</span> 
+      <button class="w3-button w3-black">ALL</button>
+      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>SEARCH</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>EVENTS</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>CHAT</button>
+    </div>
+    <div style="text-align:center;font-weight:bold;font-size:25px;">Popular Events in Los Angeles</div>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding" style="background-color:blue;height:30;width:100%;">
+    <div class="w3-container w3-margin-bottom>
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Morten</b></p>
+        <p><a href="https://www.tixr.com/pr/NAWANG/17147"><img src="morten.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-bottom row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Jason Ross</b></p>
+        <p><a href="http://bit.ly/2PgsLJV"><img src="jason-ross.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Alex</b></p>
+        <p><a href="https://vor.us/a42d7"><img src="alex.jpg" alt=""/></a></p>
+      </div>
+    </div>
+  </div>
+  <div style="background-color:#dddddd">&nbsp;</div>
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding" style="background-color:blue;height:30;width:100%;">
+    <div class="w3-container w3-margin-bottom">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Bijou</b></p>
+        <p><a href="https://www.tixr.com/pr/NAWANG/17192"><img src="bijou.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-bottom row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Mitis</b></p>
+        <p><a href="http://bit.ly/2PgsLJV"><img src="mitis-at-time-nightclub.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-botton row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Party Favor</b></p>
+	      <p><a href="https://www.tixr.com/pr/NAWANG/15984"><img src="party-favor.png" alt=""/></a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  <!-- 
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="/w3images/avatar_g.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="/w3images/me2.jpg" alt="Me" style="width:100%">
+    </div>
+  </div>
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>Follow US</b></h4>
+    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <hr>
+    
+    <h4>Technical Skills</h4>
+    <p>Photography</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <p>Web Design</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
+    </div>
+    <p>Photoshop</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+    <p>
+      <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
+        <i class="fa fa-download w3-margin-right"></i>Download Resume
+      </button>
+    </p>
+    <hr>
+    
+    <h4>How much I charge</h4>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">1GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">Unlimited Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+-->
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact"><b>Follow Us: http://instagram.com/mohobbies</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>contact@mohobbies.com</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Los Angeles, US</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>3233645911</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+    </form>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-light-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+	    <p><a href="./privacy.html">Privacy</a></p>
+	    <p><a href="./privacy.html">Terms of Use</a></p>
+    </div>
+  
+    <div class="w3-third">
+      <h3></h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <a href="http://facebook.com/mohobbies"><img src="./image/facebook.png" class="w3-left w3-margin-right" style="width:45px;"></a>
+          <span class="w3-small">Become a social publisher</span><br>
+          <span></span>
+        </li>
+        <li class="w3-padding-16">
+          <a href="http://twitter.com/mohobbies"><img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:45px;"></a>
+          <span class="w3-small">Get reward by tweeting</span><br>
+          <span></span>
+        </li>
+        <!--li class="w3-padding-16">&nbsp;&nbsp;
+          <a href="http://twitter.com/mohobbies">&nbsp;&nbsp;&nbsp;&nbsp;<img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:25px;"></a>
+          <span class="w3-small">Post to your audience</span><br>
+          <span></span>
+        </li--> 
+      </ul>
+    </div>
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Copyright © MoHobbies.com 2020</div>
+<!-- End page content -->
+</div>
+<div class="form-popup" id="loginForm">
+  <form name="signinForm" action="/j_security_check" method="post" class="form-container">
+    <h1>Login</h1>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="j_username" id="j_username" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="j_password" id="j_password" required>
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
+  </form>
+</div>
+<div class="form-popup" id="subscribeForm" style="background-color:orange;margin:10px;">
+  <form name="registersForm" action="http://mr4.biz/registers.go" method="post">
+    <h1>Subscribe</h1>
+	<div><input id="registers" name="registers" type="hidden" value='1'/></div>
+	<label for="email"><b></b></label>
+    <input type="text" placeholder="First Name" name="firstname" id="firstname" required>
+    <input type="text" placeholder="Last Name" name="lastname" id="lastname" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for="cellphone"><b>Cellphone Number</b></label>
+    <input type="text" placeholder="Enter Cellphone Number" name="phonenum" id="phonenum" required>
+	
+    <label for="psw"><b>Pin(5 digits)</b></label>
+    <input type="password" placeholder="Enter Password" name="passcode" id="password" type="password" required>
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm('subscribeForm')">Close</button>
+  </form>
+	<div>&nbsp;</div>
+</div>
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+function openForm(form) {
+  document.getElementById(form).style.display = "block";//console.log('form'+form);
+}
+function closeForm(form) {
+  document.getElementById(form).style.display = "none";
+}
+	
+</script>
+</body>
+</html>
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
