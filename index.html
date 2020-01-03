@@ -65,12 +65,11 @@ img{ width: 100%; height: auto;}*/
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-.row {
-  display: flex;
-  align-items: center;
-}
-.column {
-  width:100%;height:auto;	
+@media screen and (max-width: 480px) {
+  .w3-third {
+    float: left;
+    width: 100%;
+  }
 }
 </style>
 
@@ -322,7 +321,7 @@ function beforeUnLoad() {
     <div class="w3-third">
       <h3></h3>
       <ul class="w3-ul w3-hoverable">
-        <li class="w3-padding-16">&nbsp;&nbsp;&nbsp;
+        <li class="w3-padding-16">&nbsp;
           <a href="http://facebook.com/mohobbies"><img src="./image/facebook.png" class="w3-left w3-margin-right" style="width:45px;"></a>
           <span class="w3-small">Become a social publisher</span><br>
           <span></span>
