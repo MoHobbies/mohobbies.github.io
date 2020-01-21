@@ -318,8 +318,8 @@ function beforeUnLoad() {
           <span class="w3-small">Become a social publisher</span><br>
           <span></span>
         </li>
-        <li class="w3-padding-16">
-          &nbsp;&nbsp;<a href="http://twitter.com/mohobbies">&nbsp;&nbsp;<img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:25px;"></a>
+        <li class="w3-padding-17">
+          &nbsp;&nbsp;<a href="http://twitter.com/mohobbies"><img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:25px;"></a>
           <span class="w3-small">Get reward by tweeting</span><br>
           <span></span>
         </li>
@@ -337,19 +337,19 @@ function beforeUnLoad() {
 <!-- End page content -->
 </div>
 <div class="form-popup" id="loginForm">
-  <form name="signinForm" action="/j_security_check" method="post" class="form-container">
+  <form name="signinForm" action="/j_security_check.go?lang=en" method="post" class="form-container">
     <h1>Login</h1>
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="j_username" id="j_username" required>
+    <input type="text" placeholder="Enter Email" name="username" id="username" required>
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="j_password" id="j_password" required>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
     <button type="submit" class="btn">Login</button>
     <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
   </form>
 </div>
 <div class="form-popup" id="subscribeForm" style="background-color:orange;margin:10px;">
   <form name="registersForm" action="http://mr4.biz/registers.go" method="post">
-    <h1>Subscribe</h1>
+    <h1>Register Free</h1>
 	<div><input id="registers" name="registers" type="hidden" value='1'/></div>
 	<label for="email"><b></b></label>
     <input type="text" placeholder="First Name" name="firstname" id="firstname" required>
